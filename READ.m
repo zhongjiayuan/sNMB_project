@@ -87,7 +87,7 @@ case_result=zeros(53,4);
 for t=1:Land_entropy_size(3)
     for case_num=1:patients_num(t)
         [sort_Land_entrop,idx]=sort(Land_entropy(:,case_num,t),'descend');
-        case_result(case_num,t)=sum(sort_Land_entrop(1:300));                    
+        case_result(case_num,t)=mean(sort_Land_entrop(1:300));                    
     end
     result(t)=mean(case_result(1:patients_num(t),t));
     
@@ -100,7 +100,7 @@ B={'I' 'II'  'III' 'IV'};
 set(gca,'XTickLabel',B);
 xlabel('Stages');
 ylabel('Entropy');
-title('Average Entropy for READ ');
+title('Average sNMB for READ ');
 
 
 
