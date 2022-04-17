@@ -126,14 +126,14 @@ for s=1:TT
                 continue;
             end
             for i=1:e
-                curr_pcc=abs(corr(pre_TC(edges_list(i,1),:)',...
+                curr_pcc=(corr(pre_TC(edges_list(i,1),:)',...
                     pre_TC(edges_list(i,2),:)'));
                 
                 temp_add_onecase1=[pre_TC(edges_list(i,1),:),...
                     TC(edges_list(i,1))];
                 temp_add_onecase2=[pre_TC(edges_list(i,2),:),...
                     TC(edges_list(i,2))];
-                curr_pcc_add_onecase=abs(corr(temp_add_onecase1',temp_add_onecase2'));
+                curr_pcc_add_onecase=(corr(temp_add_onecase1',temp_add_onecase2'));
                 delt_pcc(i)=abs(curr_pcc_add_onecase-curr_pcc);
                 delt_sd(i)=abs(std([pre_TC(edges_list(i,2),:),TC(edges_list(i,2))])-std(pre_TC(edges_list(i,2),:)));
             end
