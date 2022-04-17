@@ -55,14 +55,14 @@ for l=1:psize(2)
                 continue;
             end
             for i=1:e
-                curr_pcc=abs(corr(normal(edges_list(i,1),:)',...
+                curr_pcc=(corr(normal(edges_list(i,1),:)',...
                     normal(edges_list(i,2),:)'));
                 
                 temp_add_onecase1=[normal(edges_list(i,1),:),...
                     reshape(tempcase(edges_list(i,1),l,s),1,1)];
                 temp_add_onecase2=[normal(edges_list(i,2),:),...
                     reshape(tempcase(edges_list(i,2),l,s),1,1)];
-                curr_pcc_add_onecase=abs(corr(temp_add_onecase1',temp_add_onecase2'));
+                curr_pcc_add_onecase=(corr(temp_add_onecase1',temp_add_onecase2'));
                 delt_pcc(i)=abs(curr_pcc_add_onecase-curr_pcc);
                 delt_sd(i)=abs(std([normal(edges_list(i,2),:),reshape(tempcase(edges_list(i,2),l,s),1,1)])-std(normal(edges_list(i,2),:)));
             end
